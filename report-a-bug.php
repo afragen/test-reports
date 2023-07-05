@@ -39,4 +39,5 @@ add_action(
 	}
 );
 
+// Hide Report a Bug in WordPress Beta Tester.
 add_filter( 'wpbt_hide_report_a_bug', '__return_true' );
