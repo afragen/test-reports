@@ -1,0 +1,60 @@
+{
+  "name": "afragen/report-a-bug",
+  "description": "Provide easily accessible data for bug reporting.",
+  "type": "wordpress-plugin",
+  "keywords": [
+    "bug",
+    "report"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andy Fragen",
+      "email": "andy@thefragens.com",
+      "homepage": "https://thefragens.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Colin Stewart",
+      "role": "Developer"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/afragen/report-a-bug"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/afragen/report-a-bug/issues",
+    "source": "https://github.com/afragen/report-a-bug"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=7.2"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+    "squizlabs/php_codesniffer": "3.6.0",
+    "wp-coding-standards/wpcs": "~2.3.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Fragen\\Report_A_Bug\\": "src/Report_A_Bug/"
+    }
+  },
+  "scripts": {
+    "make-pot": [
+      "wp i18n make-pot . languages/report-a-bug.pot"
+    ],
+    "wpcs": [
+      "vendor/bin/phpcbf .; vendor/bin/phpcs ."
+    ]
+  }
+}
