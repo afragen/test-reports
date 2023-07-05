@@ -7,10 +7,6 @@ namespace Composer\Autoload;
 class ComposerStaticInit3a99f08410f32e412be7e834723f2704
 {
     public static $prefixLengthsPsr4 = array (
-        'F' => 
-        array (
-            'Fragen\\Report_A_Bug\\' => 20,
-        ),
         'D' => 
         array (
             'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 55,
@@ -18,10 +14,6 @@ class ComposerStaticInit3a99f08410f32e412be7e834723f2704
     );
 
     public static $prefixDirsPsr4 = array (
-        'Fragen\\Report_A_Bug\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Report_A_Bug',
-        ),
         'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
         array (
             0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
@@ -30,6 +22,8 @@ class ComposerStaticInit3a99f08410f32e412be7e834723f2704
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'RAB_Bug_Report' => __DIR__ . '/../..' . '/src/Report_A_Bug/RAB_Bug_Report.php',
+        'RAB_Settings' => __DIR__ . '/../..' . '/src/Report_A_Bug/RAB_Settings.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

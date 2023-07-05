@@ -1,0 +1,25 @@
+#report-a-bug-bug-reports .template {
+	padding-bottom: 2rem;
+	width: min( 100vw, 520px - .5rem);
+}
+
+#report-a-bug-bug-reports .template-buttons {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+#report-a-bug-bug-reports .copy-to-clipboard {
+	align-items: center;
+	display: flex;
+	gap: .25rem;
+}
+
+#report-a-bug-bug-reports .success {
+	color: #008a20;
+}
+
+#report-a-bug-bug-reports .card {
+	margin-top: 1rem;
+}

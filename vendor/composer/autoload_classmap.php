@@ -7,4 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'RAB_Bug_Report' => $baseDir . '/src/Report_A_Bug/RAB_Bug_Report.php',
+    'RAB_Settings' => $baseDir . '/src/Report_A_Bug/RAB_Settings.php',
 );

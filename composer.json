@@ -45,9 +45,9 @@
     }
   },
   "autoload": {
-    "psr-4": {
-      "Fragen\\Report_A_Bug\\": "src/Report_A_Bug/"
-    }
+    "classmap": [
+      "src/"
+    ]
   },
   "scripts": {
     "make-pot": [
