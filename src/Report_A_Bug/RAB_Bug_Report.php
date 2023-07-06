@@ -450,7 +450,6 @@ class RAB_Bug_Report {
 		?>
 		<div>
 			<?php $this->set_environment_data(); ?>
-			<h2><?php esc_html_e( 'Report a Bug', 'report-a-bug' ); ?></h2>
 			<?php $this->print_tab_introduction(); ?>
 
 			<div id="report-a-bug-bug-reports" style="display: flex; flex-wrap: wrap; gap: 1rem">
