@@ -10,7 +10,7 @@
 /**
  * Plugin Name:       WP Test Reports
  * Plugin URI:        https://wordpress.org/plugins/wp-test-reports/
- * Description:       Provide easily accessible data for filing reports to WordPress.
+ * Description:       Get templates with useful information to help you submit reports to WordPress.
  * Author:            WordPress Upgrade/Install Team
  * Version:           0.2.0
  * Network:           true

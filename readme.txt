@@ -9,14 +9,13 @@ Requires PHP: 7.0
 Tested up to: 6.3
 Stable Tag: xxx
 
-Get a report template with useful information to file reports to WordPress.
+Get templates with useful information to help you submit reports to WordPress.
 
 ## Description
 
 Filing reports to WordPress can be daunting. What information should you provide? Where? What format is used?
 
-This plugin simplifies that process by providing you with a template with sections you can just fill out,
-paste into the right place, and submit.
+This plugin simplifies that process by providing you with a template so you can paste, fill out each section, and submit.
 
 Environment information is included in the template, so you don't need to fill in your browser,
 theme, plugins, operating system, server, database, or any of their versions. It's already in the template.
@@ -25,8 +24,8 @@ This plugin started life as a feature in the WordPress Beta Tester plugin. In or
 
 ### Usage
 
-1. Choose a report type, such as Bug Report, Bug Reproduction, Security Issue, or Patch Testing.
-2. Choose a reporting location, such as Trac, GitHub, HackerOne, or the Support Forums.
+1. Choose a report type, such as Bug Report, Bug Reproduction, Patch Testing or Security Vulnerability.
+2. Choose a reporting location, such as Trac or GitHub. Security vulnerabilities should always be reported to HackerOne.
 3. Click "Copy to clipboard" and paste into a new report at the reporting location.
 4. Fill out the sections and submit.
 

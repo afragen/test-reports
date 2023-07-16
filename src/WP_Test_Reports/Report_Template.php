@@ -81,7 +81,7 @@ class Report_Template {
 
 					<?php if ( isset( self::$new_report_urls[ $format ] ) ) : ?>
 						<a href="<?php echo esc_url( self::$new_report_urls[ $format ] ); ?>" target="_blank">
-							<?php esc_html_e( 'File a new report', 'wp-test-reports' ); ?>
+							<?php esc_html_e( 'Submit a new report', 'wp-test-reports' ); ?>
 							<span aria-hidden="true" class="dashicons dashicons-external"></span>
 						</a>
 					<?php endif; ?>
@@ -89,7 +89,7 @@ class Report_Template {
 
 				<?php if ( 'security-vulnerability' === $type ) : ?>
 					<a href="https://hackerone.com/wordpress?type=team" target="_blank">
-						<?php esc_html_e( 'File a new report', 'wp-test-reports' ); ?>
+						<?php esc_html_e( 'Submit a new report', 'wp-test-reports' ); ?>
 						<span aria-hidden="true" class="dashicons dashicons-external"></span>
 					</a>
 				<?php endif; ?>

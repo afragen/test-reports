@@ -1,6 +1,6 @@
 {
   "name": "afragen/wp-test-reports",
-  "description": "Get a report template with useful information to file reports to WordPress.",
+  "description": "Get templates with useful information to help you submit reports to WordPress.",
   "type": "wordpress-plugin",
   "keywords": [
     "test",
