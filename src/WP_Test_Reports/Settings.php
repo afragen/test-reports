@@ -1,0 +1,248 @@
+<?php
+/**
+ * WP Test Reports
+ *
+ * @package WP_Test_Reports
+ * @author Andy Fragen, Colin Stewart.
+ * @license GPL-3.0-or-later
+ */
+
+namespace WP_Test_Reports;
+
+/**
+ * Settings.
+ */
+class Settings {
+	/**
+	 * Holds main plugin file.
+	 *
+	 * @var string
+	 */
+	private static $plugin_file;
+
+	/**
+	 * Holds the plugin's base URL.
+	 *
+	 * @var string
+	 */
+	private static $plugin_base_url;
+
+	/**
+	 * Holds the plugin's version.
+	 *
+	 * @var string
+	 */
+	private static $plugin_version;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param string $file Main plugin file.
+	 */
+	public function __construct( $file ) {
+		self::$plugin_file     = $file;
+		self::$plugin_version  = get_file_data( self::$plugin_file, [ 'Version' => 'Version' ] )['Version'];
+		$directory             = basename( dirname( $file ) );
+		self::$plugin_base_url = plugin_dir_url( $directory . '/' . basename( $file ) );
+	}
+
+	/**
+	 * Loads up the settings.
+	 *
+	 * @return void
+	 */
+	public function run() {
+		$this->load_hooks();
+	}
+
+	/**
+	 * Loads hooks.
+	 *
+	 * @return void
+	 */
+	public function load_hooks() {
+		add_action( is_multisite() ? 'network_admin_menu' : 'admin_menu', [ $this, 'add_plugin_menu' ] );
+
+		/**
+		 * Filters whether to show an item in the admin bar.
+		 *
+		 * @param bool Whether to show an item in the admin bar. Default true.
+		 */
+		if ( apply_filters( 'wp_test_reports_show_in_admin_bar', true ) ) {
+			add_action( 'admin_bar_menu', [ $this, 'admin_bar_menu' ], 80 );
+		}
+
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+	}
+
+	/**
+	 * Enqueues scripts.
+	 *
+	 * @return void
+	 */
+	public function enqueue_scripts() {
+		/** This filter is documented in src/WP_Test_Reports/WPTR_Settings.php */
+		if ( is_user_logged_in() && apply_filters( 'wp_test_reports_show_in_admin_bar', true ) ) {
+			wp_enqueue_style(
+				'wp-test-reports-admin-bar',
+				self::$plugin_base_url . 'src/css/wp-test-reports-admin-bar.css',
+				[],
+				self::$plugin_version
+			);
+		}
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( is_admin() && isset( $_GET['page'] ) && 'wp-test-reports' === $_GET['page'] ) {
+			wp_enqueue_style(
+				'wp-test-reports-template',
+				self::$plugin_base_url . 'src/css/wp-test-reports-template.css',
+				[],
+				self::$plugin_version
+			);
+
+			wp_enqueue_script(
+				'wp-test-reports-options',
+				self::$plugin_base_url . 'src/js/wp-test-reports-options.js',
+				[ 'wp-a11y', 'wp-i18n' ],
+				self::$plugin_version,
+				true
+			);
+
+			wp_enqueue_script(
+				'wp-test-reports-clipboard',
+				self::$plugin_base_url . 'src/js/wp-test-reports-clipboard.js',
+				[ 'jquery', 'clipboard' ],
+				self::$plugin_version,
+				true
+			);
+		}
+	}
+
+	/**
+	 * Adds plugin menu to Tools or Settings.
+	 *
+	 * @return void
+	 */
+	public function add_plugin_menu() {
+		$parent     = is_multisite() ? 'settings.php' : 'tools.php';
+		$capability = is_multisite() ? 'manage_network_options' : 'manage_options';
+
+		add_submenu_page(
+			$parent,
+			esc_html__( 'Test Reports', 'wp-test-reports' ),
+			esc_html_x( 'Test Reports', 'Menu item', 'wp-test-reports' ),
+			$capability,
+			'wp-test-reports',
+			[ $this, 'print_settings_page' ]
+		);
+	}
+
+	/**
+	 * Defines the menu for the admin bar.
+	 *
+	 * @param \WP_Admin_Bar $wp_admin_bar The WP_Admin_Bar object.
+	 * @return void
+	 */
+	public function admin_bar_menu( \WP_Admin_Bar $wp_admin_bar ) {
+		// Exit if user doesn't have correct capabilities.
+		if ( is_multisite() && ! is_super_admin() ) {
+			return;
+		}
+
+		$wp_admin_bar->add_menu(
+			[
+				'id'    => 'wp-test-reports',
+				'title' => '<span class="ab-icon" aria-hidden="true"></span><span class="ab-label">' . __( 'Test Reports', 'wp-test-reports' ) . '</span>',
+				'href'  => add_query_arg(
+					[ 'page' => 'wp-test-reports' ],
+					is_multisite() ? network_admin_url( 'settings.php' ) : admin_url( 'tools.php' )
+				),
+				'meta'  => [ 'title' => __( 'Get a report template.', 'wp-test-reports' ) ],
+			]
+		);
+	}
+
+	/**
+	 * Prints the template for the settings page.
+	 *
+	 * @return void
+	 */
+	public function print_settings_page() {
+		$introduction  = '<p>' . __( 'Get a report template for pasting into Trac, GitHub or HackerOne.', 'wp-test-reports' ) . '</p>';
+		$introduction .= '<p>' . __( 'After pasting the template, complete each section and submit your report.', 'wp-test-reports' ) . '</p>';
+
+		$report_template = new Report_Template();
+		?>
+		<div class="wrap">
+			<div class="wp-test-reports">
+				<div class="wp-test-reports-introduction">
+					<h1><?php esc_html_e( 'WP Test Reports', 'wp-test-reports' ); ?></h1>
+					<?php echo wp_kses_post( $introduction ); ?>
+
+					<div class="wp-test-reports-options">
+						<div class="report-type">
+							<fieldset>
+								<legend><?php esc_html_e( 'Report Type:' ); ?></legend>
+								<div class="wp-test-reports-radio">
+									<label>
+										<input type="radio" name="report-type" value="bug-report" checked>
+										Bug Report
+									</label>
+								</div>
+								<div class="wp-test-reports-radio">
+									<label>
+										<input type="radio" name="report-type" value="bug-reproduction">
+										Bug Reproduction
+									</label>
+								</div>
+								<div class="wp-test-reports-radio">
+									<label>
+										<input type="radio" name="report-type" value="patch-testing">
+										Patch Testing
+									</label>
+								</div>
+								<div class="wp-test-reports-radio">
+									<label>
+										<input type="radio" name="report-type" value="security-vulnerability">
+										Security Vulnerability
+									</label>
+								</div>
+							</fieldset>
+						</div>
+						<div class="report-location">
+							<fieldset>
+								<legend><?php esc_html_e( 'Report Location:' ); ?></legend>
+								<div class="wp-test-reports-radio">
+									<label>
+										<input type="radio" name="report-location" value="trac" checked>
+										Trac
+									</label>
+								</div>
+								<div class="wp-test-reports-radio">
+									<label>
+										<input type="radio" name="report-location" value="github">
+										GitHub
+									</label>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+
+				<div class="wp-test-reports-templates">
+					<?php $report_template->print_report_template( 'Bug Report', 'bug-report', 'trac' ); ?>
+					<?php $report_template->print_report_template( 'Bug Report', 'bug-report', 'github', true ); ?>
+
+					<?php $report_template->print_report_template( 'Reproduction Report', 'bug-reproduction', 'trac', true ); ?>
+					<?php $report_template->print_report_template( 'Reproduction Report', 'bug-reproduction', 'github', true ); ?>
+
+					<?php $report_template->print_report_template( 'Test Report', 'patch-testing', 'trac', true ); ?>
+					<?php $report_template->print_report_template( 'Test Report', 'patch-testing', 'github', true ); ?>
+
+					<?php $report_template->print_report_template( 'Security Vulnerability', 'security-vulnerability', 'github', true ); ?>
+				</div>
+		</div>
+		<?php
+	}
+}

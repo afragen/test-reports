@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
-    'RAB_Bug_Report' => $baseDir . '/src/Report_A_Bug/RAB_Bug_Report.php',
-    'RAB_Settings' => $baseDir . '/src/Report_A_Bug/RAB_Settings.php',
+    'WP_Test_Reports\\Environment_Information' => $baseDir . '/src/WP_Test_Reports/Environment_Information.php',
+    'WP_Test_Reports\\Report_Template' => $baseDir . '/src/WP_Test_Reports/Report_Template.php',
+    'WP_Test_Reports\\Settings' => $baseDir . '/src/WP_Test_Reports/Settings.php',
 );
