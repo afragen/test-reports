@@ -12,7 +12,7 @@ testReportClipboard.on(
 	function( e ) {
 		const success = jQuery( e.trigger ).next( '.success' );
 
-		window.wp.a11y.speak( wp.i18n.__( 'Copied to clipboard', 'wp-test-reports' ) );
+		window.wp.a11y.speak( wp.i18n.__( 'Copied to clipboard', 'test-reports' ) );
 
 		success.removeClass( 'hidden' );
 

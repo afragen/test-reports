@@ -74,14 +74,14 @@ class Report_Template {
 				<?php if ( 'bug-report' === $type ) : ?>
 					<?php if ( isset( self::$search_urls[ $format ] ) ) : ?>
 						<a href="<?php echo esc_url( self::$search_urls[ $format ] ); ?>" target="_blank">
-							<?php esc_html_e( 'Search for an existing report', 'wp-test-reports' ); ?>
+							<?php esc_html_e( 'Search for an existing report', 'test-reports' ); ?>
 							<span aria-hidden="true" class="dashicons dashicons-external"></span>
 						</a>
 					<?php endif; ?>
 
 					<?php if ( isset( self::$new_report_urls[ $format ] ) ) : ?>
 						<a href="<?php echo esc_url( self::$new_report_urls[ $format ] ); ?>" target="_blank">
-							<?php esc_html_e( 'Submit a new report', 'wp-test-reports' ); ?>
+							<?php esc_html_e( 'Submit a new report', 'test-reports' ); ?>
 							<span aria-hidden="true" class="dashicons dashicons-external"></span>
 						</a>
 					<?php endif; ?>
@@ -89,16 +89,16 @@ class Report_Template {
 
 				<?php if ( 'security-vulnerability' === $type ) : ?>
 					<a href="https://hackerone.com/wordpress?type=team" target="_blank">
-						<?php esc_html_e( 'Submit a new report', 'wp-test-reports' ); ?>
+						<?php esc_html_e( 'Submit a new report', 'test-reports' ); ?>
 						<span aria-hidden="true" class="dashicons dashicons-external"></span>
 					</a>
 				<?php endif; ?>
 
 				<div class="copy-to-clipboard">
 					<button type="button" class="button" data-clipboard-text="<?php echo esc_attr( str_replace( '&nbsp;', ' ', $report_template ) ); ?>">
-						<?php esc_html_e( 'Copy to clipboard', 'wp-test-reports' ); ?>
+						<?php esc_html_e( 'Copy to clipboard', 'test-reports' ); ?>
 					</button>
-					<span class="success hidden" aria-hidden="true"><?php esc_html_e( 'Copied!', 'wp-test-reports' ); ?></span>
+					<span class="success hidden" aria-hidden="true"><?php esc_html_e( 'Copied!', 'test-reports' ); ?></span>
 				</div>
 			</div>
 			<?php echo wp_kses_post( '<div class="card">' . nl2br( $report_template ) . '</div>' ); ?>

@@ -1,4 +1,4 @@
-# # WP Test Reports
+# WP Test Reports
 
 Tags: test, report, bug, patch, reproduce
 Contributors: afragen, costdev

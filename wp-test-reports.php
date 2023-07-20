@@ -9,17 +9,17 @@
 
 /**
  * Plugin Name:       WP Test Reports
- * Plugin URI:        https://wordpress.org/plugins/wp-test-reports/
+ * Plugin URI:        https://wordpress.org/plugins/test-reports/
  * Description:       Get templates with useful information to help you submit reports to WordPress.
  * Author:            WordPress Upgrade/Install Team
  * Version:           0.2.0
  * Network:           true
  * Author URI:        https://make.wordpress.org/core/components/upgrade-install/
- * Text Domain:       wp-test-reports
+ * Text Domain:       test-reports
  * Domain Path:       /languages
  * License:           GPL-3.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.txt
- * GitHub Plugin URI: https://github.com/afragen/wp-test-reports
+ * GitHub Plugin URI: https://github.com/afragen/test-reports
  * Primary Branch:    main
  * Requires at least: 5.9
  * Requires PHP:      7.0

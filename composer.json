@@ -1,5 +1,5 @@
 {
-  "name": "afragen/wp-test-reports",
+  "name": "afragen/test-reports",
   "description": "Get templates with useful information to help you submit reports to WordPress.",
   "type": "wordpress-plugin",
   "keywords": [
@@ -26,12 +26,12 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/afragen/wp-test-reports"
+      "url": "https://github.com/afragen/test-reports"
     }
   ],
   "support": {
-    "issues": "https://github.com/afragen/wp-test-reports/issues",
-    "source": "https://github.com/afragen/wp-test-reports"
+    "issues": "https://github.com/afragen/test-reports/issues",
+    "source": "https://github.com/afragen/test-reports"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -55,7 +55,7 @@
   },
   "scripts": {
     "make-pot": [
-      "wp --allow-root i18n make-pot . languages/wp-test-reports.pot"
+      "wp --allow-root i18n make-pot . languages/test-reports.pot"
     ],
     "wpcs": [
       "vendor/bin/phpcbf .; vendor/bin/phpcs ."

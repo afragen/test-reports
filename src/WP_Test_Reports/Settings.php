@@ -130,8 +130,8 @@ class Settings {
 
 		add_submenu_page(
 			$parent,
-			esc_html__( 'Test Reports', 'wp-test-reports' ),
-			esc_html_x( 'Test Reports', 'Menu item', 'wp-test-reports' ),
+			esc_html__( 'Test Reports', 'test-reports' ),
+			esc_html_x( 'Test Reports', 'Menu item', 'test-reports' ),
 			$capability,
 			'wp-test-reports',
 			[ $this, 'print_settings_page' ]
@@ -153,12 +153,12 @@ class Settings {
 		$wp_admin_bar->add_menu(
 			[
 				'id'    => 'wp-test-reports',
-				'title' => '<span class="ab-icon" aria-hidden="true"></span><span class="ab-label">' . __( 'Test Reports', 'wp-test-reports' ) . '</span>',
+				'title' => '<span class="ab-icon" aria-hidden="true"></span><span class="ab-label">' . __( 'Test Reports', 'test-reports' ) . '</span>',
 				'href'  => add_query_arg(
 					[ 'page' => 'wp-test-reports' ],
 					is_multisite() ? network_admin_url( 'settings.php' ) : admin_url( 'tools.php' )
 				),
-				'meta'  => [ 'title' => __( 'Get a report template.', 'wp-test-reports' ) ],
+				'meta'  => [ 'title' => __( 'Get a report template.', 'test-reports' ) ],
 			]
 		);
 	}
@@ -169,15 +169,15 @@ class Settings {
 	 * @return void
 	 */
 	public function print_settings_page() {
-		$introduction  = '<p>' . __( 'Get a report template for pasting into Trac, GitHub or HackerOne.', 'wp-test-reports' ) . '</p>';
-		$introduction .= '<p>' . __( 'After pasting the template, complete each section and submit your report.', 'wp-test-reports' ) . '</p>';
+		$introduction  = '<p>' . __( 'Get a report template for pasting into Trac, GitHub or HackerOne.', 'test-reports' ) . '</p>';
+		$introduction .= '<p>' . __( 'After pasting the template, complete each section and submit your report.', 'test-reports' ) . '</p>';
 
 		$report_template = new Report_Template();
 		?>
 		<div class="wrap">
 			<div class="wp-test-reports">
 				<div class="wp-test-reports-introduction">
-					<h1><?php esc_html_e( 'WP Test Reports', 'wp-test-reports' ); ?></h1>
+					<h1><?php esc_html_e( 'WP Test Reports', 'test-reports' ); ?></h1>
 					<?php echo wp_kses_post( $introduction ); ?>
 
 					<div class="wp-test-reports-options">
