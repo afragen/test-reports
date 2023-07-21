@@ -6,31 +6,16 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit3a99f08410f32e412be7e834723f2704
 {
-    public static $prefixLengthsPsr4 = array (
-        'D' => 
-        array (
-            'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 55,
-        ),
-    );
-
-    public static $prefixDirsPsr4 = array (
-        'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
-        ),
-    );
-
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'RAB_Bug_Report' => __DIR__ . '/../..' . '/src/Report_A_Bug/RAB_Bug_Report.php',
-        'RAB_Settings' => __DIR__ . '/../..' . '/src/Report_A_Bug/RAB_Settings.php',
+        'WP_Test_Reports\\Environment_Information' => __DIR__ . '/../..' . '/src/WP_Test_Reports/Environment_Information.php',
+        'WP_Test_Reports\\Report_Template' => __DIR__ . '/../..' . '/src/WP_Test_Reports/Report_Template.php',
+        'WP_Test_Reports\\Settings' => __DIR__ . '/../..' . '/src/WP_Test_Reports/Settings.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3a99f08410f32e412be7e834723f2704::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3a99f08410f32e412be7e834723f2704::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit3a99f08410f32e412be7e834723f2704::$classMap;
 
         }, null, ClassLoader::class);

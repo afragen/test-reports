@@ -1,12 +1,15 @@
 {
-  "name": "afragen/report-a-bug",
-  "description": "Provide easily accessible data for bug reporting.",
+  "name": "afragen/test-reports",
+  "description": "Get templates with useful information to help you submit reports to WordPress.",
   "type": "wordpress-plugin",
   "keywords": [
+    "test",
+    "report",
     "bug",
-    "report"
+    "patch",
+    "reproduce"
   ],
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "Andy Fragen",
@@ -16,23 +19,24 @@
     },
     {
       "name": "Colin Stewart",
+			"homepage": "https://github.com/costdev",
       "role": "Developer"
     }
   ],
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/afragen/report-a-bug"
+      "url": "https://github.com/afragen/test-reports"
     }
   ],
   "support": {
-    "issues": "https://github.com/afragen/report-a-bug/issues",
-    "source": "https://github.com/afragen/report-a-bug"
+    "issues": "https://github.com/afragen/test-reports/issues",
+    "source": "https://github.com/afragen/test-reports"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "php": ">=7.2"
+    "php": ">=7.0"
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
@@ -51,7 +55,7 @@
   },
   "scripts": {
     "make-pot": [
-      "wp i18n make-pot . languages/report-a-bug.pot"
+      "wp --allow-root i18n make-pot . languages/test-reports.pot"
     ],
     "wpcs": [
       "vendor/bin/phpcbf .; vendor/bin/phpcs ."
