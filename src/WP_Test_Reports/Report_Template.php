@@ -183,7 +183,7 @@ class Report_Template {
 		$environment_information['MU Plugins'] = implode( "\n", $environment_information['MU Plugins'] );
 		$environment_information               = array_map(
 			function( $key, $value ) {
-				return str_contains( $value, "\n" ) ? "- $key:\n$value" : "- $key: $value";
+				return str_contains( $value, '*' ) ? "- $key:\n$value" : "- $key: $value";
 			},
 			array_keys( $environment_information ),
 			$environment_information
