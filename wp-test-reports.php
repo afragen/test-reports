@@ -12,7 +12,7 @@
  * Plugin URI:        https://wordpress.org/plugins/test-reports/
  * Description:       Get templates with useful information to help you submit reports to WordPress.
  * Author:            WordPress Upgrade/Install Team
- * Version:           0.3.0
+ * Version:           0.3.1
  * Network:           true
  * Author URI:        https://make.wordpress.org/core/components/upgrade-install/
  * Text Domain:       test-reports
@@ -36,7 +36,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 add_action(
 	'plugins_loaded',
-	function() {
+	static function () {
 		( new Settings( __FILE__ ) )->run();
 	}
 );
