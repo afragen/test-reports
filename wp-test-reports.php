@@ -36,7 +36,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 add_action(
 	'plugins_loaded',
-	function() {
+	function () {
 		( new Settings( __FILE__ ) )->run();
 	}
 );

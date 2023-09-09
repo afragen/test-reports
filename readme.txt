@@ -7,7 +7,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 Requires at least: 5.9
 Requires PHP: 7.0
 Tested up to: 6.3
-Stable Tag: 0.3.0
+Stable Tag: 0.3.1
 
 Get templates with useful information to help you submit reports to WordPress.
 
@@ -33,6 +33,9 @@ This plugin started life as a feature in the WordPress Beta Tester plugin. In or
 1. Bug Report
 
 ## Changelog
+
+#### 0.3.1 / 2023-09-09
+* `mysql_get_client_info()` no longer in PHP 8.2, switch to `mysqli_get_client_info()`
 
 #### 0.3.0 / 2023-07-20
 * initial pass
