@@ -1,7 +1,7 @@
 [unreleased]
 
 #### 0.3.1 / 2023-09-09
-* `mysql_get_client_info()` no longer in PHP 8.2, switch to `mysqli_get_client_info()`
+* `mysql_get_client_info()` no longer in PHP 7.0, switch to `mysqli_get_client_info()`
 
 #### 0.3.0 / 2023-07-20
 * initial pass
