@@ -44,7 +44,4 @@ return array(
     'PHPCSUtils\\Utils\\TextStrings' => $vendorDir . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/TextStrings.php',
     'PHPCSUtils\\Utils\\UseStatements' => $vendorDir . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/UseStatements.php',
     'PHPCSUtils\\Utils\\Variables' => $vendorDir . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/Variables.php',
-    'Test_Reports\\Environment_Information' => $baseDir . '/src/Test_Reports/Environment_Information.php',
-    'Test_Reports\\Report_Template' => $baseDir . '/src/Test_Reports/Report_Template.php',
-    'Test_Reports\\Settings' => $baseDir . '/src/Test_Reports/Settings.php',
 );

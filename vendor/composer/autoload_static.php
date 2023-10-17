@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit3a99f08410f32e412be7e834723f2704
 {
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'WPCore\\Test_Reports\\' => 20,
+        ),
         'P' => 
         array (
             'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 57,
@@ -14,6 +18,10 @@ class ComposerStaticInit3a99f08410f32e412be7e834723f2704
     );
 
     public static $prefixDirsPsr4 = array (
+        'WPCore\\Test_Reports\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Test_Reports',
+        ),
         'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
         array (
             0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
@@ -59,9 +67,6 @@ class ComposerStaticInit3a99f08410f32e412be7e834723f2704
         'PHPCSUtils\\Utils\\TextStrings' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/TextStrings.php',
         'PHPCSUtils\\Utils\\UseStatements' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/UseStatements.php',
         'PHPCSUtils\\Utils\\Variables' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/Variables.php',
-        'Test_Reports\\Environment_Information' => __DIR__ . '/../..' . '/src/Test_Reports/Environment_Information.php',
-        'Test_Reports\\Report_Template' => __DIR__ . '/../..' . '/src/Test_Reports/Report_Template.php',
-        'Test_Reports\\Settings' => __DIR__ . '/../..' . '/src/Test_Reports/Settings.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

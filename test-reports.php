@@ -25,7 +25,7 @@
  * Requires PHP:      7.0
  */
 
-namespace Test_Reports;
+namespace WPCore\Test_Reports;
 
 // Exit if called directly.
 if ( ! defined( 'WPINC' ) ) {
