@@ -7,7 +7,7 @@
  * @license GPL-3.0-or-later
  */
 
-namespace Test_Reports;
+namespace WPCore\Test_Reports;
 
 /**
  * Report Template.

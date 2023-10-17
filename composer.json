@@ -19,7 +19,7 @@
     },
     {
       "name": "Colin Stewart",
-			"homepage": "https://github.com/costdev",
+      "homepage": "https://github.com/costdev",
       "role": "Developer"
     }
   ],
@@ -47,9 +47,9 @@
     }
   },
   "autoload": {
-    "classmap": [
-      "src/"
-    ]
+    "psr-4": {
+      "WPCore\\Test_Reports\\": "src/Test_Reports/"
+    }
   },
   "scripts": {
     "make-pot": [
