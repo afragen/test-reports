@@ -1,13 +1,13 @@
 <?php
 /**
- * WP Test Reports
+ * Test Reports
  *
- * @package WP_Test_Reports
+ * @package Test_Reports
  * @author Andy Fragen, Colin Stewart.
  * @license GPL-3.0-or-later
  */
 
-namespace WP_Test_Reports;
+namespace Test_Reports;
 
 /**
  * Environment Information.

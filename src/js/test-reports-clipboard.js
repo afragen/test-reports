@@ -1,7 +1,7 @@
 /**
  * Clipboard: Initializes "Copy to clipboard" buttons.
  *
- * @package WP_Test_Reports
+ * @package Test_Reports
  * @license GPL-3.0-or-later
  */
 

@@ -1,60 +1,60 @@
-.wp-test-reports {
+.test-reports {
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 4rem;
 	row-gap: 1rem;
 }
 
-.wp-test-reports a {
+.test-reports a {
 	text-decoration: none;
 }
 
-.wp-test-reports-options legend {
+.test-reports-options legend {
 	margin-bottom: .5em;
 }
 
-.wp-test-reports-options .report-type fieldset,
-.wp-test-reports-options .report-location:not(.hidden) fieldset {
+.test-reports-options .report-type fieldset,
+.test-reports-options .report-location:not(.hidden) fieldset {
 	display: flex;
 	flex-direction: column;
 	gap: .5em;
 }
 
-.wp-test-reports-radio input {
+.test-reports-radio input {
 	margin-top: 0;
 }
 
-.wp-test-reports .report-type {
+.test-reports .report-type {
 	margin-bottom: 1em;
 }
 
-.wp-test-reports-templates {
+.test-reports-templates {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
 }
 
-.wp-test-reports .template {
+.test-reports .template {
 	padding-bottom: 2rem;
 }
 
-.wp-test-reports .template-buttons {
+.test-reports .template-buttons {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
 }
 
-.wp-test-reports .copy-to-clipboard {
+.test-reports .copy-to-clipboard {
 	align-items: center;
 	display: flex;
 	gap: .25rem;
 }
 
-.wp-test-reports .success {
+.test-reports .success {
 	color: #008a20;
 }
 
-.wp-test-reports .card {
+.test-reports .card {
 	margin-top: 1rem;
 }
