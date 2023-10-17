@@ -1,8 +1,8 @@
 <?php
 /**
- * WP Test Reports
+ * Test Reports
  *
- * @package WP_Test_Reports
+ * @package Test_Reports
  * @author Andy Fragen, Colin Stewart.
  * @license GPL-3.0-or-later
  */
@@ -12,7 +12,7 @@
  * Plugin URI:        https://wordpress.org/plugins/test-reports/
  * Description:       Get templates with useful information to help you submit reports to WordPress.
  * Author:            WordPress Upgrade/Install Team
- * Version:           0.3.1
+ * Version:           0.4.0
  * Network:           true
  * Author URI:        https://make.wordpress.org/core/components/upgrade-install/
  * Text Domain:       test-reports
@@ -25,7 +25,7 @@
  * Requires PHP:      7.0
  */
 
-namespace WP_Test_Reports;
+namespace Test_Reports;
 
 // Exit if called directly.
 if ( ! defined( 'WPINC' ) ) {

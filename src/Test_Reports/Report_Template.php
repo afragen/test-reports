@@ -1,13 +1,13 @@
 <?php
 /**
- * WP Test Reports
+ * Test Reports
  *
- * @package WP_Test_Reports
+ * @package Test_Reports
  * @author Andy Fragen, Colin Stewart.
  * @license GPL-3.0-or-later
  */
 
-namespace WP_Test_Reports;
+namespace Test_Reports;
 
 /**
  * Report Template.
@@ -178,10 +178,12 @@ class Report_Template {
 	 * @return void
 	 */
 	private function set_environment_information() {
-		$environment_information               = ( new Environment_Information() )->get_environment_information();
-		$environment_information['Plugins']    = implode( "\n", $environment_information['Plugins'] );
-		$environment_information['MU Plugins'] = implode( "\n", $environment_information['MU Plugins'] );
-		$environment_information               = array_map(
+		$environment_information            = ( new Environment_Information() )->get_environment_information();
+		$environment_information['Plugins'] = implode( "\n", $environment_information['Plugins'] );
+		if ( is_array( $environment_information['MU Plugins'] ) ) {
+			$environment_information['MU Plugins'] = implode( "\n", $environment_information['MU Plugins'] );
+		}
+		$environment_information = array_map(
 			static function ( $key, $value ) {
 				return str_contains( $value, '*' ) ? "- $key:\n$value" : "- $key: $value";
 			},

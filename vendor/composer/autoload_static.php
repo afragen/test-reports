@@ -59,9 +59,9 @@ class ComposerStaticInit3a99f08410f32e412be7e834723f2704
         'PHPCSUtils\\Utils\\TextStrings' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/TextStrings.php',
         'PHPCSUtils\\Utils\\UseStatements' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/UseStatements.php',
         'PHPCSUtils\\Utils\\Variables' => __DIR__ . '/..' . '/phpcsstandards/phpcsutils/PHPCSUtils/Utils/Variables.php',
-        'WP_Test_Reports\\Environment_Information' => __DIR__ . '/../..' . '/src/WP_Test_Reports/Environment_Information.php',
-        'WP_Test_Reports\\Report_Template' => __DIR__ . '/../..' . '/src/WP_Test_Reports/Report_Template.php',
-        'WP_Test_Reports\\Settings' => __DIR__ . '/../..' . '/src/WP_Test_Reports/Settings.php',
+        'Test_Reports\\Environment_Information' => __DIR__ . '/../..' . '/src/Test_Reports/Environment_Information.php',
+        'Test_Reports\\Report_Template' => __DIR__ . '/../..' . '/src/Test_Reports/Report_Template.php',
+        'Test_Reports\\Settings' => __DIR__ . '/../..' . '/src/Test_Reports/Settings.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

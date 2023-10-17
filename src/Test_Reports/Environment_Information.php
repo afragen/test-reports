@@ -1,13 +1,13 @@
 <?php
 /**
- * WP Test Reports
+ * Test Reports
  *
- * @package WP_Test_Reports
+ * @package Test_Reports
  * @author Andy Fragen, Colin Stewart.
  * @license GPL-3.0-or-later
  */
 
-namespace WP_Test_Reports;
+namespace Test_Reports;
 
 /**
  * Environment Information.
@@ -178,7 +178,7 @@ class Environment_Information {
 			} else {
 				$client_version = 'Unavailable';
 			}
-		} else {
+		} else { // phpcs:ignore Universal.ControlStructures.DisallowLonelyIf.Found
 			// phpcs:ignore WordPress.DB.RestrictedFunctions.mysql_mysqli_get_client_info,PHPCompatibility.Extensions.RemovedExtensions.mysql_DeprecatedRemoved
 			if ( preg_match( '|[0-9]{1,2}\.[0-9]{1,2}\.[0-9]{1,2}|', mysqli_get_client_info(), $matches ) ) {
 				$client_version = $matches[0];

@@ -1,0 +1,21 @@
+#wp-admin-bar-test-reports {
+	display: block !important;
+}
+
+#wp-admin-bar-test-reports .ab-icon {
+	margin: 2px 4px 0 0;
+}
+
+#wp-admin-bar-test-reports .ab-icon::before {
+	content: "\f451";
+}
+
+@media (max-width: 782px) {
+	#wp-admin-bar-test-reports .ab-icon {
+		margin-left: 4px;
+	}
+
+	#wp-admin-bar-test-reports .ab-label {
+		display: none;
+	}
+}

@@ -1,13 +1,13 @@
 <?php
 /**
- * WP Test Reports
+ * Test Reports
  *
- * @package WP_Test_Reports
+ * @package Test_Reports
  * @author Andy Fragen, Colin Stewart.
  * @license GPL-3.0-or-later
  */
 
-namespace WP_Test_Reports;
+namespace Test_Reports;
 
 /**
  * Settings.
@@ -68,7 +68,7 @@ class Settings {
 		 *
 		 * @param bool Whether to show an item in the admin bar. Default true.
 		 */
-		if ( apply_filters( 'wp_test_reports_show_in_admin_bar', true ) ) {
+		if ( apply_filters( 'test_reports_show_in_admin_bar', true ) ) {
 			add_action( 'admin_bar_menu', [ $this, 'admin_bar_menu' ], 80 );
 		}
 
@@ -82,36 +82,36 @@ class Settings {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		/** This filter is documented in src/WP_Test_Reports/WPTR_Settings.php */
-		if ( is_user_logged_in() && apply_filters( 'wp_test_reports_show_in_admin_bar', true ) ) {
+		/** This filter is documented in src/Test_Reports/WPTR_Settings.php */
+		if ( is_user_logged_in() && apply_filters( 'test_reports_show_in_admin_bar', true ) ) {
 			wp_enqueue_style(
-				'wp-test-reports-admin-bar',
-				self::$plugin_base_url . 'src/css/wp-test-reports-admin-bar.css',
+				'test-reports-admin-bar',
+				self::$plugin_base_url . 'src/css/test-reports-admin-bar.css',
 				[],
 				self::$plugin_version
 			);
 		}
 
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		if ( is_admin() && isset( $_GET['page'] ) && 'wp-test-reports' === $_GET['page'] ) {
+		if ( is_admin() && isset( $_GET['page'] ) && 'test-reports' === $_GET['page'] ) {
 			wp_enqueue_style(
-				'wp-test-reports-template',
-				self::$plugin_base_url . 'src/css/wp-test-reports-template.css',
+				'test-reports-template',
+				self::$plugin_base_url . 'src/css/test-reports-template.css',
 				[],
 				self::$plugin_version
 			);
 
 			wp_enqueue_script(
-				'wp-test-reports-options',
-				self::$plugin_base_url . 'src/js/wp-test-reports-options.js',
+				'test-reports-options',
+				self::$plugin_base_url . 'src/js/test-reports-options.js',
 				[ 'wp-a11y', 'wp-i18n' ],
 				self::$plugin_version,
 				true
 			);
 
 			wp_enqueue_script(
-				'wp-test-reports-clipboard',
-				self::$plugin_base_url . 'src/js/wp-test-reports-clipboard.js',
+				'test-reports-clipboard',
+				self::$plugin_base_url . 'src/js/test-reports-clipboard.js',
 				[ 'jquery', 'clipboard' ],
 				self::$plugin_version,
 				true
@@ -133,7 +133,7 @@ class Settings {
 			esc_html__( 'Test Reports', 'test-reports' ),
 			esc_html_x( 'Test Reports', 'Menu item', 'test-reports' ),
 			$capability,
-			'wp-test-reports',
+			'test-reports',
 			[ $this, 'print_settings_page' ]
 		);
 	}
@@ -152,10 +152,10 @@ class Settings {
 
 		$wp_admin_bar->add_menu(
 			[
-				'id'    => 'wp-test-reports',
+				'id'    => 'test-reports',
 				'title' => '<span class="ab-icon" aria-hidden="true"></span><span class="ab-label">' . __( 'Test Reports', 'test-reports' ) . '</span>',
 				'href'  => add_query_arg(
-					[ 'page' => 'wp-test-reports' ],
+					[ 'page' => 'test-reports' ],
 					is_multisite() ? network_admin_url( 'settings.php' ) : admin_url( 'tools.php' )
 				),
 				'meta'  => [ 'title' => __( 'Get a report template.', 'test-reports' ) ],
@@ -175,34 +175,34 @@ class Settings {
 		$report_template = new Report_Template();
 		?>
 		<div class="wrap">
-			<div class="wp-test-reports">
-				<div class="wp-test-reports-introduction">
-					<h1><?php esc_html_e( 'WP Test Reports', 'test-reports' ); ?></h1>
+			<div class="test-reports">
+				<div class="test-reports-introduction">
+					<h1><?php esc_html_e( 'Test Reports', 'test-reports' ); ?></h1>
 					<?php echo wp_kses_post( $introduction ); ?>
 
-					<div class="wp-test-reports-options">
+					<div class="test-reports-options">
 						<div class="report-type">
 							<fieldset>
 								<legend><?php esc_html_e( 'Report Type:' ); ?></legend>
-								<div class="wp-test-reports-radio">
+								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-type" value="bug-report" checked>
 										Bug Report
 									</label>
 								</div>
-								<div class="wp-test-reports-radio">
+								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-type" value="bug-reproduction">
 										Bug Reproduction
 									</label>
 								</div>
-								<div class="wp-test-reports-radio">
+								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-type" value="patch-testing">
 										Patch Testing
 									</label>
 								</div>
-								<div class="wp-test-reports-radio">
+								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-type" value="security-vulnerability">
 										Security Vulnerability
@@ -213,13 +213,13 @@ class Settings {
 						<div class="report-location">
 							<fieldset>
 								<legend><?php esc_html_e( 'Report Location:' ); ?></legend>
-								<div class="wp-test-reports-radio">
+								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-location" value="trac" checked>
 										Trac
 									</label>
 								</div>
-								<div class="wp-test-reports-radio">
+								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-location" value="github">
 										GitHub
@@ -230,7 +230,7 @@ class Settings {
 					</div>
 				</div>
 
-				<div class="wp-test-reports-templates">
+				<div class="test-reports-templates">
 					<?php $report_template->print_report_template( 'Bug Report', 'bug-report', 'trac' ); ?>
 					<?php $report_template->print_report_template( 'Bug Report', 'bug-report', 'github', true ); ?>
 
