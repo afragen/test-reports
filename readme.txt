@@ -1,4 +1,4 @@
-# Test Reports
+=== Test Reports ===
 
 Tags: test, report, bug, patch, reproduce
 Contributors: afragen, costdev
