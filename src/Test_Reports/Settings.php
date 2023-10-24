@@ -7,7 +7,7 @@
  * @license GPL-3.0-or-later
  */
 
-namespace WPCore\Test_Reports;
+namespace Upgrade_Install_Team\Test_Reports;
 
 /**
  * Settings.

@@ -48,7 +48,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WPCore\\Test_Reports\\": "src/Test_Reports/"
+      "Upgrade_Install_Team\\Test_Reports\\": "src/Test_Reports/"
     }
   },
   "scripts": {
