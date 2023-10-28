@@ -48,7 +48,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Upgrade_Install_Team\\Test_Reports\\": "src/Test_Reports/"
+      "Fragen_Stewart\\Test_Reports\\": "src/Test_Reports/"
     }
   },
   "scripts": {

@@ -25,7 +25,7 @@
  * Requires PHP:      7.0
  */
 
-namespace Upgrade_Install_Team\Test_Reports;
+namespace Fragen_Stewart\Test_Reports;
 
 // Exit if called directly.
 if ( ! defined( 'WPINC' ) ) {

@@ -6,6 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Upgrade_Install_Team\\Test_Reports\\' => array($baseDir . '/src/Test_Reports'),
     'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => array($vendorDir . '/dealerdirect/phpcodesniffer-composer-installer/src'),
+    'Fragen_Stewart\\Test_Reports\\' => array($baseDir . '/src/Test_Reports'),
 );

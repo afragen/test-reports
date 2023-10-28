@@ -7,7 +7,7 @@
  * @license GPL-3.0-or-later
  */
 
-namespace Upgrade_Install_Team\Test_Reports;
+namespace Fragen_Stewart\Test_Reports;
 
 /**
  * Report Template.
