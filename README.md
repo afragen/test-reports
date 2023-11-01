@@ -16,8 +16,7 @@ Filing reports to WordPress can be daunting. What information should you provide
 
 This plugin simplifies that process by providing you with a template so you can paste, fill out each section, and submit.
 
-Environment information is included in the template, so you don't need to fill in your browser,
-theme, plugins, operating system, server, database, or any of their versions. It's already in the template.
+Environment information is included in the template, so you don't need to fill in your browser, theme, plugins, operating system, server, database, or any of their versions. It's already in the template.
 
 This plugin started life as a feature in the WordPress Beta Tester plugin. In order to bring it to more users and devs, creating a standalone plugin seemed optimal.
 
