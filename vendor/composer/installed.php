@@ -3,7 +3,7 @@
         'name' => 'afragen/test-reports',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => 'e343d785db8e20e599bfa188688fc0808833cc74',
+        'reference' => 'ed851574b49cee7023feb36207c6127f7d371664',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'afragen/test-reports' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => 'e343d785db8e20e599bfa188688fc0808833cc74',
+            'reference' => 'ed851574b49cee7023feb36207c6127f7d371664',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

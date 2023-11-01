@@ -1,5 +1,8 @@
 [unreleased]
 
+#### 1.0.0 / 2023-11-01
+* initial release to dot org
+
 #### 0.4.0 / 2023-10-16
 * update namespacing, etc for plugin review team
 
