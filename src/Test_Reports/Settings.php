@@ -231,16 +231,16 @@ class Settings {
 				</div>
 
 				<div class="test-reports-templates">
-					<?php $report_template->print_report_template( esc_html__( 'Bug Report', 'test-reports' ), 'bug-report', 'trac' ); ?>
-					<?php $report_template->print_report_template( esc_html__( 'Bug Report', 'test-reports' ), 'bug-report', 'github', true ); ?>
+					<?php $report_template->print_report_template( 'Bug Report', 'bug-report', 'trac' ); ?>
+					<?php $report_template->print_report_template( 'Bug Report', 'bug-report', 'github', true ); ?>
 
-					<?php $report_template->print_report_template( esc_html__( 'Reproduction Report', 'test-reports' ), 'bug-reproduction', 'trac', true ); ?>
-					<?php $report_template->print_report_template( esc_html__( 'Reproduction Report', 'test-reports' ), 'bug-reproduction', 'github', true ); ?>
+					<?php $report_template->print_report_template( 'Reproduction Report', 'bug-reproduction', 'trac', true ); ?>
+					<?php $report_template->print_report_template( 'Reproduction Report', 'bug-reproduction', 'github', true ); ?>
 
-					<?php $report_template->print_report_template( esc_html__( 'Test Report', 'test-reports' ), 'patch-testing', 'trac', true ); ?>
-					<?php $report_template->print_report_template( esc_html__( 'Test Report', 'test-reports' ), 'patch-testing', 'github', true ); ?>
+					<?php $report_template->print_report_template( 'Test Report', 'patch-testing', 'trac', true ); ?>
+					<?php $report_template->print_report_template( 'Test Report', 'patch-testing', 'github', true ); ?>
 
-					<?php $report_template->print_report_template( esc_html__( 'Security Vulnerability', 'test-reports' ), 'security-vulnerability', 'github', true ); ?>
+					<?php $report_template->print_report_template( 'Security Vulnerability', 'security-vulnerability', 'github', true ); ?>
 				</div>
 		</div>
 		<?php
