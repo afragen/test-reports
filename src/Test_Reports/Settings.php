@@ -183,7 +183,7 @@ class Settings {
 					<div class="test-reports-options">
 						<div class="report-type">
 							<fieldset>
-								<legend><?php esc_html_e( 'Report Type:' ); ?></legend>
+								<legend><?php esc_html_e( 'Report Type:', 'test-reports' ); ?></legend>
 								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-type" value="bug-report" checked>
@@ -212,7 +212,7 @@ class Settings {
 						</div>
 						<div class="report-location">
 							<fieldset>
-								<legend><?php esc_html_e( 'Report Location:' ); ?></legend>
+								<legend><?php esc_html_e( 'Report Location:', 'test-reports' ); ?></legend>
 								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-location" value="trac" checked>
