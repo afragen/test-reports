@@ -130,7 +130,7 @@ class Settings {
 
 		add_submenu_page(
 			$parent,
-			esc_html__( 'Test Reports', 'test-reports' ),
+			esc_html_x( 'Test Reports', 'Page title', 'test-reports' ),
 			esc_html_x( 'Test Reports', 'Menu item', 'test-reports' ),
 			$capability,
 			'test-reports',
@@ -153,7 +153,7 @@ class Settings {
 		$wp_admin_bar->add_menu(
 			[
 				'id'    => 'test-reports',
-				'title' => '<span class="ab-icon" aria-hidden="true"></span><span class="ab-label">' . __( 'Test Reports', 'test-reports' ) . '</span>',
+				'title' => '<span class="ab-icon" aria-hidden="true"></span><span class="ab-label">' . _x( 'Test Reports', 'Menu item', 'test-reports' ) . '</span>',
 				'href'  => add_query_arg(
 					[ 'page' => 'test-reports' ],
 					is_multisite() ? network_admin_url( 'settings.php' ) : admin_url( 'tools.php' )
@@ -177,52 +177,52 @@ class Settings {
 		<div class="wrap">
 			<div class="test-reports">
 				<div class="test-reports-introduction">
-					<h1><?php esc_html_e( 'Test Reports', 'test-reports' ); ?></h1>
+					<h1><?php echo esc_html_x( 'Test Reports', 'Page title', 'test-reports' ); ?></h1>
 					<?php echo wp_kses_post( $introduction ); ?>
 
 					<div class="test-reports-options">
 						<div class="report-type">
 							<fieldset>
-								<legend><?php esc_html_e( 'Report Type:' ); ?></legend>
+								<legend><?php esc_html_e( 'Report Type:', 'test-reports' ); ?></legend>
 								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-type" value="bug-report" checked>
-										Bug Report
+										<?php esc_html_e( 'Bug Report', 'test-reports' ); ?>
 									</label>
 								</div>
 								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-type" value="bug-reproduction">
-										Bug Reproduction
+										<?php esc_html_e( 'Bug Reproduction', 'test-reports' ); ?>
 									</label>
 								</div>
 								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-type" value="patch-testing">
-										Patch Testing
+										<?php esc_html_e( 'Patch Testing', 'test-reports' ); ?>
 									</label>
 								</div>
 								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-type" value="security-vulnerability">
-										Security Vulnerability
+										<?php esc_html_e( 'Security Vulnerability', 'test-reports' ); ?>
 									</label>
 								</div>
 							</fieldset>
 						</div>
 						<div class="report-location">
 							<fieldset>
-								<legend><?php esc_html_e( 'Report Location:' ); ?></legend>
+								<legend><?php esc_html_e( 'Report Location:', 'test-reports' ); ?></legend>
 								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-location" value="trac" checked>
-										Trac
+										<?php esc_html_e( 'Trac', 'test-reports' ); ?>
 									</label>
 								</div>
 								<div class="test-reports-radio">
 									<label>
 										<input type="radio" name="report-location" value="github">
-										GitHub
+										<?php esc_html_e( 'GitHub', 'test-reports' ); ?>
 									</label>
 								</div>
 							</fieldset>
