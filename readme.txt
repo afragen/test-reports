@@ -7,7 +7,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 Requires at least: 5.9
 Requires PHP: 7.0
 Tested up to: 6.4
-Stable Tag: 1.0.0
+Stable Tag: 1.0.1
 
 Get templates with useful information to help you submit reports to WordPress.
 
@@ -17,8 +17,7 @@ Filing reports to WordPress can be daunting. What information should you provide
 
 This plugin simplifies that process by providing you with a template so you can paste, fill out each section, and submit.
 
-Environment information is included in the template, so you don't need to fill in your browser,
-theme, plugins, operating system, server, database, or any of their versions. It's already in the template.
+Environment information is included in the template, so you don't need to fill in your browser, theme, plugins, operating system, server, database, or any of their versions. It's already in the template.
 
 This plugin started life as a feature in the WordPress Beta Tester plugin. In order to bring it to more users and devs, creating a standalone plugin seemed optimal.
 

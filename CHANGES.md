@@ -1,5 +1,8 @@
 [unreleased]
 
+#### 1.0.1 / 2024-01-09
+* updates to i18n
+
 #### 1.0.0 / 2023-11-01
 * initial release to dot org
 
