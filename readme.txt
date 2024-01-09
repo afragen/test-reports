@@ -7,7 +7,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 Requires at least: 5.9
 Requires PHP: 7.0
 Tested up to: 6.4
-Stable Tag: 1.0.0
+Stable Tag: 1.0.1
 
 Get templates with useful information to help you submit reports to WordPress.
 
