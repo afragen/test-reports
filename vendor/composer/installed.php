@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'afragen/test-reports',
-        'pretty_version' => 'dev-develop',
-        'version' => 'dev-develop',
-        'reference' => '38a64478886fb0f8488d7d98b43d02e98652d8d6',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'e4354c56fe139b4f5692e1080eaf0644d8461b10',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'afragen/test-reports' => array(
-            'pretty_version' => 'dev-develop',
-            'version' => 'dev-develop',
-            'reference' => '38a64478886fb0f8488d7d98b43d02e98652d8d6',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'e4354c56fe139b4f5692e1080eaf0644d8461b10',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
