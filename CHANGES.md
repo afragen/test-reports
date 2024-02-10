@@ -1,5 +1,8 @@
 [unreleased]
 
+#### 1.1.0 / 2024-02-09
+* check for SQLite
+
 #### 1.0.1 / 2024-01-09
 * updates to i18n
 
