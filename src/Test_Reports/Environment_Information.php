@@ -166,7 +166,9 @@ class Environment_Information {
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 		$server_version = $wpdb->get_var( 'SELECT VERSION()' );
 
-		if ( isset( $wpdb->use_mysqli ) && $wpdb->use_mysqli ) {
+		if ( defined( 'DB_ENGINE' ) && 'sqlite' === DB_ENGINE ) {
+			$client_version = class_exists( 'SQLite3' ) ? \SQLite3::version()['versionString'] : 'Unavailable';
+		} elseif ( isset( $wpdb->use_mysqli ) && $wpdb->use_mysqli ) {
 			if ( property_exists( $wpdb->dbh, 'client_info' ) ) {
 				$client_version = $wpdb->dbh->client_info;
 				$client_version = explode( ' - ', $client_version )[0];
