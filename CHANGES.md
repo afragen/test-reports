@@ -1,4 +1,5 @@
 [unreleased]
+* composer update
 
 #### 1.1.0 / 2024-02-09
 * check for SQLite
