@@ -1,5 +1,9 @@
 [unreleased]
 
+#### 1.2.0 / 2024-11-01
+* remove hook for Beta Tester's Report a Bug, no longer present
+* composer update
+
 #### 1.1.0 / 2024-02-09
 * check for SQLite
 
