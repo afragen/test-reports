@@ -1,39 +1,41 @@
-# Copyright (C) 2023 WordPress Upgrade/Install Team
+# Copyright (C) 2025 WordPress Upgrade/Install Team
 # This file is distributed under the GPL-3.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Test Reports 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/test-reports\n"
+"Project-Id-Version: Test Reports 1.2.0\n"
+"Report-Msgid-Bugs-To: https://github.com/afragen/test-reports/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-01T18:49:19+00:00\n"
+"POT-Creation-Date: 2025-04-08T21:24:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: test-reports\n"
 
 #. Plugin Name of the plugin
-#: src/Test_Reports/Settings.php:133
-#: src/Test_Reports/Settings.php:156
-#: src/Test_Reports/Settings.php:180
+#: test-reports.php
 msgid "Test Reports"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: test-reports.php
 msgid "https://wordpress.org/plugins/test-reports/"
 msgstr ""
 
 #. Description of the plugin
+#: test-reports.php
 msgid "Get templates with useful information to help you submit reports to WordPress."
 msgstr ""
 
 #. Author of the plugin
+#: test-reports.php
 msgid "WordPress Upgrade/Install Team"
 msgstr ""
 
 #. Author URI of the plugin
+#: test-reports.php
 msgid "https://make.wordpress.org/core/components/upgrade-install/"
 msgstr ""
 
@@ -54,7 +56,14 @@ msgstr ""
 msgid "Copied!"
 msgstr ""
 
+#: src/Test_Reports/Settings.php:133
+#: src/Test_Reports/Settings.php:180
+msgctxt "Page title"
+msgid "Test Reports"
+msgstr ""
+
 #: src/Test_Reports/Settings.php:134
+#: src/Test_Reports/Settings.php:156
 msgctxt "Menu item"
 msgid "Test Reports"
 msgstr ""
@@ -69,6 +78,38 @@ msgstr ""
 
 #: src/Test_Reports/Settings.php:173
 msgid "After pasting the template, complete each section and submit your report."
+msgstr ""
+
+#: src/Test_Reports/Settings.php:186
+msgid "Report Type:"
+msgstr ""
+
+#: src/Test_Reports/Settings.php:190
+msgid "Bug Report"
+msgstr ""
+
+#: src/Test_Reports/Settings.php:196
+msgid "Bug Reproduction"
+msgstr ""
+
+#: src/Test_Reports/Settings.php:202
+msgid "Patch Testing"
+msgstr ""
+
+#: src/Test_Reports/Settings.php:208
+msgid "Security Vulnerability"
+msgstr ""
+
+#: src/Test_Reports/Settings.php:215
+msgid "Report Location:"
+msgstr ""
+
+#: src/Test_Reports/Settings.php:219
+msgid "Trac"
+msgstr ""
+
+#: src/Test_Reports/Settings.php:225
+msgid "GitHub"
 msgstr ""
 
 #: src/js/test-reports-clipboard.js:15
