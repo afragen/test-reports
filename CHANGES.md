@@ -1,4 +1,6 @@
 [unreleased]
+
+#### 1.2.1 / 2025-11-11
 * add GAs for releases and make-pot
 
 #### 1.2.0 / 2024-11-01
