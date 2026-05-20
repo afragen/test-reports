@@ -129,34 +129,23 @@ class Report_Template {
 		$sub_heading      = $is_wiki ? '===' : '###';
 		$last_item        = $is_wiki ? 'x' : '2';
 
+		if ( 'bug-reproduction' === $type || 'patch-testing' === $type ) {
+			return $this->get_testing_report_template( $type, $heading, $sub_heading, $last_item, $title );
+		}
+
 		$report  = ! $is_vulnerability ? "$heading $title\n" : '';
 		$report .= "$sub_heading Description\n" . $this->get_description( $type ) . "\n\n";
 		$report .= "$sub_heading Environment\n" . self::$environment_information . "\n\n";
 
-		if ( 'bug-report' === $type || 'security-vulnerability' === $type ) {
-			$report .= "$sub_heading Steps to Reproduce\n";
-			$report .= "1.&nbsp;\n";
-			$report .= "$last_item. 🐞 Bug occurs.\n\n";
+		$report .= "$sub_heading Steps to Reproduce\n";
+		$report .= "1.&nbsp;\n";
+		$report .= "$last_item. 🐞 Bug occurs.\n\n";
 
-			$report .= "$sub_heading Expected Results\n";
-			$report .= "1.&nbsp; ✅ What should happen.\n\n";
-		}
+		$report .= "$sub_heading Expected Results\n";
+		$report .= "1.&nbsp; ✅ What should happen.\n\n";
 
 		$report .= "$sub_heading Actual Results\n";
-		$report .= '1.&nbsp; ';
-
-		switch ( $type ) {
-			case 'bug-report':
-			case 'security-vulnerability':
-				$report .= "❌ What actually happened.\n\n";
-				break;
-			case 'bug-reproduction':
-				$report .= "✅ Error condition occurs (reproduced).\n\n";
-				break;
-			case 'patch-testing':
-				$report .= "✅ Issue resolved with patch.\n\n";
-				break;
-		}
+		$report .= "1.&nbsp; ❌ What actually happened.\n\n";
 
 		$report .= "$sub_heading Additional Notes\n";
 		$report .= "- Any additional details worth mentioning.\n\n";
@@ -168,6 +157,66 @@ class Report_Template {
 		}
 
 		$report .= 'Add as Attachment';
+
+		return str_replace( "\t", '', $report );
+	}
+
+	/**
+	 * Builds the Reproduction or Patch Testing report template.
+	 *
+	 * Structure follows the proposal in WordPress/test-handbook#104:
+	 * Environment, Steps taken (result as final step), Expected behavior/result,
+	 * Additional Notes, Screenshots/Screencast with results, Support Content.
+	 *
+	 * @param string $type        "bug-reproduction" or "patch-testing".
+	 * @param string $heading     Top-level heading marker for the format.
+	 * @param string $sub_heading Sub-heading marker for the format.
+	 * @param string $last_item   Marker used for the final list item ("x" for Trac, "2" for GitHub).
+	 * @param string $title       The title of the report template.
+	 * @return string The test report template.
+	 */
+	private function get_testing_report_template( $type, $heading, $sub_heading, $last_item, $title ) {
+		$is_patch = 'patch-testing' === $type;
+
+		$report = "$heading $title\n";
+
+		if ( $is_patch ) {
+			$report .= "Patch tested: REPLACE_WITH_PATCH_URL\n\n";
+		}
+
+		$report .= "$sub_heading Environment\n" . self::$environment_information . "\n\n";
+
+		$report .= "$sub_heading Steps taken\n";
+		$report .= "1.&nbsp;\n";
+		$report .= "$last_item. ";
+		$report .= $is_patch
+			? "✅ Patch is solving the problem / ❌ Patch is failing\n\n"
+			: "🐞 Bug occurs / ❌ Bug is not occurring\n\n";
+
+		if ( $is_patch ) {
+			$report .= "$sub_heading Expected result\n";
+			$report .= "- Explain what results you were expecting from this patch.\n\n";
+		} else {
+			$report .= "$sub_heading Expected behavior\n";
+			$report .= "- Explain what behavior you were expecting from the ticket information.\n\n";
+		}
+
+		$report .= "$sub_heading Additional Notes\n";
+		$report .= "- Any additional details worth mentioning.\n\n";
+
+		$report .= "$sub_heading Screenshots/Screencast with results\n";
+		$report .= $is_patch
+			? "- Screenshot/Screencast before\n- Screenshot/Screencast after\n\n"
+			: "- Screenshot showcasing the problem or the bug not occurring.\n\n";
+
+		$report .= "$sub_heading Support Content\n";
+		$report .= "- Here you can add any support content useful for testing.\n";
+		$report .= "For example:\n";
+		$report .= "1. Blueprint JSON\n";
+		$report .= "2. Website Playground URL with parameters\n";
+		$report .= "3. Snippets of code\n";
+		$report .= "4. Additional Screenshots\n";
+		$report .= '5. etc...';
 
 		return str_replace( "\t", '', $report );
 	}
@@ -200,21 +249,13 @@ class Report_Template {
 	 * Descriptions are intentionally not translated as they are
 	 * intended for posting in English-language ticketing systems.
 	 *
-	 * @param string $type The report type. "bug-report", "bug-reproduction", "patch-testing"
-	 *                     or "security-vulnerability".
+	 * @param string $type The report type. "bug-report" or "security-vulnerability".
 	 * @return string The description.
 	 */
 	private function get_description( $type ) {
 		switch ( $type ) {
 			case 'bug-report':
 				$description = 'Describe the bug.';
-				break;
-			case 'bug-reproduction':
-				$description = 'This report validates whether the issue can be reproduced.';
-				break;
-			case 'patch-testing':
-				$description  = "This report validates whether the indicated patch works as expected.\n\n";
-				$description .= 'Patch tested: REPLACE_WITH_PATCH_URL';
 				break;
 			case 'security-vulnerability':
 				$description = 'Describe the security vulnerability.';

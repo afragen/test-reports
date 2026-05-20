@@ -1,59 +1,58 @@
 {
-  "name": "afragen/test-reports",
-  "description": "Get templates with useful information to help you submit reports to WordPress.",
-  "type": "wordpress-plugin",
-  "keywords": [
-    "test",
-    "report",
-    "bug",
-    "patch",
-    "reproduce"
-  ],
-  "license": "GPL-3.0-or-later",
-  "authors": [
-    {
-      "name": "Andy Fragen",
-      "email": "andy@thefragens.com",
-      "homepage": "https://thefragens.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Colin Stewart",
-      "homepage": "https://github.com/costdev",
-      "role": "Developer"
-    }
-  ],
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/afragen/test-reports"
-    }
-  ],
-  "support": {
-    "issues": "https://github.com/afragen/test-reports/issues",
-    "source": "https://github.com/afragen/test-reports"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "require": {
-    "php": ">=7.0"
-  },
-  "require-dev": {
-    "wp-coding-standards/wpcs": "^3.0.0"
-  },
-  "config": {
-    "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
-  },
-  "autoload": {
-    "psr-4": {
-      "Fragen_Stewart\\Test_Reports\\": "src/Test_Reports/"
-    }
-  },
-  "scripts": {
-    "wpcs": [
-      "vendor/bin/phpcbf .; vendor/bin/phpcs ."
-    ]
-  }
+	"name": "afragen/test-reports",
+	"description": "Get templates with useful information to help you submit reports to WordPress.",
+	"type": "wordpress-plugin",
+	"keywords": [
+		"test",
+		"report",
+		"bug",
+		"patch",
+		"reproduce"
+	],
+	"license": "GPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Andy Fragen",
+			"email": "andy@thefragens.com",
+			"homepage": "https://thefragens.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Colin Stewart",
+			"homepage": "https://github.com/costdev",
+			"role": "Developer"
+		}
+	],
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/afragen/test-reports"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/afragen/test-reports/issues",
+		"source": "https://github.com/afragen/test-reports"
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=7.0"
+	},
+	"require-dev": {
+		"wp-coding-standards/wpcs": "^3.0.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Fragen_Stewart\\Test_Reports\\": "src/Test_Reports/"
+		}
+	},
+	"scripts": {
+		"lint": "@php ./vendor/bin/phpcs .",
+		"format": "@php ./vendor/bin/phpcbf ."
+	}
 }

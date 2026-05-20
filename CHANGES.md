@@ -1,5 +1,9 @@
 [unreleased]
 
+#### 1.3.0 / 2026-05-20
+* add data for subdirectory installation
+* update Bug Reproduction and Patch Testing templates per WordPress/test-handbook#104
+
 #### 1.2.1 / 2025-11-11
 * add GAs for releases and make-pot
 

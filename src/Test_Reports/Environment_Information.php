@@ -64,7 +64,8 @@ class Environment_Information {
 		global $wp_version;
 
 		self::$environment_information['WordPress'] = $wp_version;
-		self::$environment_information['PHP']       = phpversion();
+		$this->set_subdirectory();
+		self::$environment_information['PHP'] = phpversion();
 
 		$this->set_server();
 		$this->set_database();
@@ -248,6 +249,23 @@ class Environment_Information {
 
 		self::$environment_information['Browser'] .= $version ? ' ' . $version[1] : '';
 		self::$environment_information['Browser'] .= wp_is_mobile() ? ' (Mobile)' : '';
+	}
+
+	/**
+	 * Sets the subdirectory status based on the site URL and home URL
+	 * or if it's a multisite with subdirectories.
+	 *
+	 * @return void
+	 */
+	private function set_subdirectory() {
+		self::$environment_information['Subdirectory'] = 'No';
+
+		$siteurl = parse_url( get_option( 'siteurl' ), PHP_URL_PATH );
+		$home    = parse_url( get_option( 'home' ), PHP_URL_PATH );
+
+		if ( ( $siteurl !== $home ) || ( is_multisite() && ! is_subdomain_install() ) ) {
+			self::$environment_information['Subdirectory'] = 'Yes';
+		}
 	}
 
 	/**
