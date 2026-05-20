@@ -1,4 +1,6 @@
 [unreleased]
+
+#### 1.3.0 / 2026-05-20
 * add data for subdirectory installation
 * update Bug Reproduction and Patch Testing templates per WordPress/test-handbook#104
 

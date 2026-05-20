@@ -6,8 +6,8 @@ License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 Requires at least: 5.9
 Requires PHP: 7.0
-Tested up to: 6.9
-Stable Tag: 1.2.1
+Tested up to: 7.0
+Stable Tag: 1.3.0
 
 Get templates with useful information to help you submit reports to WordPress.
 
@@ -32,6 +32,10 @@ This plugin started life as a feature in the WordPress Beta Tester plugin. In or
 1. Bug Report
 
 ## Changelog
+
+#### 1.3.0 / 2026-05-20
+* add data for subdirectory installation
+* update Bug Reproduction and Patch Testing templates per WordPress/test-handbook#104
 
 #### 1.2.1 / 2025-11-11
 * add GAs for releases and make-pot
