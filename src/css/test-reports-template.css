@@ -36,6 +36,8 @@
 
 .test-reports .template {
 	padding-bottom: 2rem;
+	width: 600px;
+	max-width: 100%;
 }
 
 .test-reports .template-buttons {
@@ -57,4 +59,10 @@
 
 .test-reports .card {
 	margin-top: 1rem;
+}
+
+@media screen and (max-width: 782px) {
+	.test-reports .template {
+		width: 100%;
+	}
 }
